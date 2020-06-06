@@ -1,27 +1,28 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
     return (
         <nav className='navbar navbar-dark bg-dark navbar-expand-lg'>
             <div className="container" style={{justifyContent: 'space-between'}}>
-                    <a className="navbar-brand mb-1" href="/">Aerospace Marketplace</a>
+                    <NavLink className="navbar-brand mb-1" to="/">Aerospace Marketplace</NavLink>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Airplanes <span className="sr-only">(current)</span></a>
+                            <NavLink className="nav-link" to="/">Airplanes <span className="sr-only">(current)</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Rotorcraft</a>
+                            <NavLink className="nav-link" to="/">Rotorcraft</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Spare Parts</a>
+                            <NavLink className="nav-link" to="/">Spare Parts</NavLink>
                         </li>
                     </ul>
                     <ul className="navbar-nav mr-0 mt-2 mt-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Post advert</a>
+                            <NavLink className="nav-link" to="/">Post advert</NavLink>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Sign In</a>
+                            <NavLink className="nav-link" to="/login">Sign In</NavLink>
                         </li>
                     </ul>
             </div>

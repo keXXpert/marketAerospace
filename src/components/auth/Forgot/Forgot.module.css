@@ -1,0 +1,19 @@
+.backdrop {
+    height: 100vh;
+    width: 100vw;
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background: #f2f2f2;
+}
+
+.forgot {
+    background: #fff;
+    box-sizing: border-box;
+    width: 500px;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .3);
+}
