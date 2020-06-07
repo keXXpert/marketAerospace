@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import classNames from 'classnames'
 
 const airplanes = [
     { brand: 'Airbus', adsCount: 7 },
@@ -8,6 +9,8 @@ const airplanes = [
 ]
 
 const Homepage = () => {
+    const [newUsedToggle, setNewUsed] = useState('all')
+    
     return (
         <div className="container pt-4">
             {/* <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -23,9 +26,15 @@ const Homepage = () => {
             </div> */}
             <h1>MarketPlace</h1>
             <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-secondary active pl-4 pr-4">All</button>
-                <button type="button" className="btn btn-secondary pl-4 pr-4">New</button>
-                <button type="button" className="btn btn-secondary pl-4 pr-4">Used</button>
+                <button type="button" 
+                    className={classNames('btn btn-light pl-4 pr-4', {active: newUsedToggle === 'all'})} 
+                    onClick={()=> setNewUsed('all')}>All</button>
+                <button type="button"  
+                    className={classNames('btn btn-light pl-4 pr-4', {active: newUsedToggle === 'new'})} 
+                    onClick={()=> setNewUsed('new')}>New</button>
+                <button type="button" 
+                    className={classNames('btn btn-light pl-4 pr-4', {active: newUsedToggle === 'used'})}
+                    onClick={()=> setNewUsed('used')}>Used</button>
             </div>
             
         </div>
