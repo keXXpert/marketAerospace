@@ -24,7 +24,7 @@ const Homepage = () => {
                     <input type="radio" name="options" id="option3" autoComplete="off" />Used
                 </label>
             </div> */}
-            <h1>MarketPlace</h1>
+            <h2>Airplanes on sale</h2>
             <div className="btn-group" role="group" aria-label="Basic example">
                 <button type="button" 
                     className={classNames('btn btn-light pl-4 pr-4', {active: newUsedToggle === 'all'})} 
@@ -36,6 +36,7 @@ const Homepage = () => {
                     className={classNames('btn btn-light pl-4 pr-4', {active: newUsedToggle === 'used'})}
                     onClick={()=> setNewUsed('used')}>Used</button>
             </div>
+            <div style={{border: '1px solid #ccc', borderRadius: '5px', height:'150px'}}>Brands here</div>
             
         </div>
     )
