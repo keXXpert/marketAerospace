@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import myCSS from './Login.module.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
-const Login = () => {
+const Login = (props: any) => {
+    const [isLogging, setLogging] = useState(false)
+    console.log(document.referrer);
+
     return (
         <div className={myCSS.backdrop}>
             <div className={myCSS.login}>
@@ -21,7 +24,12 @@ const Login = () => {
                         </div>
                         <small><NavLink to='/forgot'>Forgot your password?</NavLink></small>
                     </div>
-                    <button type='button' className='btn btn-dark w-75'>Sign in</button>
+                    <button className="btn btn-dark w-75" type="button" disabled={isLogging} onClick={()=> {setLogging(!isLogging)}}>
+                        {isLogging
+                        ? <><span className="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                        Signing in...</>
+                        : 'Sign in'                        }
+                    </button>
                     <hr />
                     <div className='mb-2'>
                         <p> Don't have an account? <NavLink to='/register'>Register now</NavLink></p>
@@ -32,4 +40,4 @@ const Login = () => {
     )
 }
 // form-group form-check form-inline
-export default Login
+export default withRouter(Login)
